@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/inativo','ProdutoController@inativo');
+
+Route::prefix('produtos')->group(function(){
+    Route::get('/','ProdutoController@create');
 });
+
+Route::prefix('clientes')->group(function(){
+    Route::get('/', 'ClienteController@index');
+});
+
