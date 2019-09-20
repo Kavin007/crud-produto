@@ -4,30 +4,37 @@
 
 <div class="card" style="width: 40rem;">
     <div class="card-body">
-        <h5 class="card-title d-flex justify-content-center">Cadastro de Clientes</h5>
-        <form action="">
+        <h5 class="card-title d-flex justify-content-center">{{$data['cliente'] ? 'Editar cliente' : 'Novo cliente'}}</h5>
+        
+        <form method="POST" action="{{url($data['url'])}}">
+        @if($data['method'] == 'PUT')
+                @method('PUT')
+            @endif
+            @csrf
 
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" class="form-control" placeholder="nome">
+                
+                <input type="text" value="{{old('cliente.nome', $data['cliente'] ? $data['cliente']->nome : '')}}" name="cliente[nome]" name="cliente[nome]" class="form-control" placeholder="nome">
             </div>
 
             <div class="form-group">
             <label for="sobrenome">Sobrenome:</label>
-            <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome">
+            <input type="text" value="{{old('cliente.sobrenome', $data['cliente'] ? $data['cliente']->sobrenome : '')}}" name="cliente[sobrenome] "class="form-control" placeholder="Sobrenome">
             </div>
 
             <div class="form-group">
             <label for="email">Email:</label>
-            <input type="text" name="email" class="form-control" placeholder="Email">
+            <input type="text" value="{{old('cliente.email', $data['cliente'] ? $data['cliente']->email : '')}}" name="cliente[email]" class="form-control" placeholder="Email">
             </div>
 
             <div class="form-group">
             <label for="senha">Senha:</label>
-            <input type="text" name="senha" class="form-control" placeholder="Senha">
+            <input type="password" value="{{old('cliente.senha', $data['cliente'] ? $data['cliente']->senha : '')}}" name="cliente[senha]" class="form-control" placeholder="Senha">
             </div>
 
-            <button type="submit" class="btn btn-outline-success">Salvar</button>
+            <input type="submit" value="{{$data['cliente'] ? 'Atualizar' : 'Salvar'}}" class="btn btn-outline-success">
+            
         </form>
 
     </div>

@@ -20,7 +20,7 @@
             <a class="nav-link active" href="{{url('/produtos')}}">Produto</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/clientes')}}">Cliente</a>
+            <a class="nav-link" href="{{url('/clientes/create')}}">Cliente</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Vendas</a>
