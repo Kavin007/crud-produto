@@ -40,4 +40,43 @@
         </table>
     </div>
 </div>
+
+
+
+<div class="card" style=" width: 50rem;">
+    <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Produtos</h5>
+        <table class="table table-striped">
+            <thead>
+
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            @foreach($data['produtos'] as $produto)
+            <tbody>
+                <tr>
+                    <th scope="row">{{$produto->id}}</th>
+                    <td>{{$produto->nome}}</td>
+                    <td>{{$produto->preco}}</td>
+                    <td>{{$produto->descricao}}</td>
+                    
+                    <td><a  class="btn btn-warning">Editar</td>
+                    
+                    <td>
+
+                            <button type="submit" class="btn btn-danger">Danger</button>
+                        
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
 @stop

@@ -17,7 +17,7 @@
             <a class="nav-link active" href="#">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="{{url('/produtos')}}">Produto</a>
+            <a class="nav-link active" href="{{url('/produtos/create')}}">Produto</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{url('/clientes/create')}}">Cliente</a>

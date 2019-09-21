@@ -8,16 +8,17 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-
     public function index()
     {
         $data = [
             'clientes' => Clientes::get(),
+            
             //     'clientesInativos' => Clientes::onlyTrashed()->get()
         ];
         return view('clientes.index', compact('data'));
 
     }
+
 
     public function create()
     {
