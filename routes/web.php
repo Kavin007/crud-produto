@@ -11,8 +11,6 @@
 |
 */
 
-// Route::get('/inativo','ProdutoController@inativo');
-//rota responsavel pela home
 
 
 Route::prefix('produtos')->group(function(){
@@ -40,5 +38,10 @@ Route::prefix('clientes')->group(function(){
     // rota para inativar
     Route::delete('{id}', 'ClienteController@destroy');
 
+});
+
+Route::prefix('compras')->group(function() {
+    Route::get('create', 'CompraController@create');
+    Route::post('/', 'CompraController@store');
 });
 

@@ -23,7 +23,7 @@
             <a class="nav-link" href="{{url('/clientes/create')}}">Cliente</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Vendas</a>
+            <a class="nav-link" href="{{url('/compras/create')}}">Compras</a>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled" href="{{url('/inativo')}}">Inativos</a>
