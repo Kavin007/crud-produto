@@ -33,23 +33,26 @@ class CompraController extends Controller
 
 
     public function store(Request $request) {
-        // DB::beginTransaction();
-        // try {        
+        DB::beginTransaction();
+        try {        
+            
+            $produto = Produtos::findOrFail($request->produtos_id);
+             
             $compras = Compras::create([
                 'data' => $request['compras']['data'],
                 'clientes_id' => $request['compras']['clientes_id']
             ]);
             
             
-            $compras->produtos()->attach($request['compras']);
+            $compras->produtos()->attach($produto,array('quantidade'=>$request->quantidade));
            
             
             
-        //     DB::commit();
-        //     return redirect('compras');
-        // } catch(\Exception $e) {
-        //     DB::rollback();
-        //     return redirect('compras'); 
-        // }
-    }
+            DB::commit();
+            return redirect('compras');
+        } catch(\Exception $e) {
+            DB::rollback();
+            return redirect('compras'); 
+        }
+     }
 }

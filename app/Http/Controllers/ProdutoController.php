@@ -9,15 +9,15 @@ class ProdutoController extends Controller
 {   
 
 
-    public function index()
-    {
-        $data = [
-            'produtos' => Produtos::get()
-            //     'clientesInativos' => Clientes::onlyTrashed()->get()
-        ];
-        return view('produtos.index', compact('data'));
+    // public function index()
+    // {
+    //     $data = [
+    //         'produtos' => Produtos::get()
+    //         //     'clientesInativos' => Clientes::onlyTrashed()->get()
+    //     ];
+    //     return view('produtos.index', compact('data'));
 
-    }
+    // }
 
 
     public function create()
@@ -43,10 +43,10 @@ class ProdutoController extends Controller
             ]);
             
             DB::commit();
-            return redirect('produtos');
+            return redirect('/');
         } catch (\Exception $e) {
             DB::rollback();
-            return redirect('produtos');
+            return redirect('/');
         }
     }
 

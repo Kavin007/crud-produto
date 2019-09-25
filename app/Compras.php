@@ -10,6 +10,6 @@ class Compras extends Model
     protected $fillable = ['data', 'clientes_id'];
 
     public function produtos() {
-        return $this->belongsToMany('App\Produtos', 'produtos_has_compras')->withPivot('quantidade');
+        return $this->belongsToMany('App\Produtos', 'produtos_has_compras','produtos_id','compras_id')->withPivot('quantidade');
     }
 }

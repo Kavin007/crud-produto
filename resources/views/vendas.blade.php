@@ -30,7 +30,7 @@
                 <div class="col-md-5">
                     <div class="form-group">
                         <label><b>Produtos</b></label>
-                        <select name="produtos[0][produtos_id]" class="form-control">
+                        <select name="produtos_id" class="form-control">
                             @foreach($data['produtos'] as $produto)
                             <option value="{{$produto->id}}">{{$produto->nome}}</option>
                             @endforeach
@@ -38,7 +38,7 @@
                     </div>
                     
                         <label><b>Quantidade:</b></label>
-                        <input type="text" value="{{old('compras.quantidade', '')}}" name="compras[quantidade]" class="form-control" placeholder="Quantidade">
+                        <input type="text" value="{{old('compras.quantidade', '')}}" name="quantidade" class="form-control" placeholder="Quantidade">
                     
                 </div>
 

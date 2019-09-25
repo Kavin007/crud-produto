@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-    public function index()
-    {
-        $data = [
-            'clientes' => Clientes::get(),
+    // public function index()
+    // {
+    //     $data = [
+    //         'clientes' => Clientes::get(),
             
-            //     'clientesInativos' => Clientes::onlyTrashed()->get()
-        ];
-        return view('clientes.index', compact('data'));
+    //         //     'clientesInativos' => Clientes::onlyTrashed()->get()
+    //     ];
+    //     return view('home', compact('data'));
 
-    }
+    // }
 
 
     public function create()
@@ -44,10 +44,11 @@ class ClienteController extends Controller
             ]);
 
             DB::commit();
-            return redirect('clientes');
+  
+            return redirect('/');
         } catch (\Exception $e) {
             DB::rollback();
-            return redirect('clientes');
+            return redirect('/');
         }
     }
 

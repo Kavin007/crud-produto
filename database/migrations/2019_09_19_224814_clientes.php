@@ -17,7 +17,7 @@ class Clientes extends Migration
             $table->Increments('id');
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('email')->unique();
+            $table->string('email',45)->unique();
             $table->string('senha');
             $table->timestamps();
             $table->softDeletes();

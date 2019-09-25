@@ -1,7 +1,7 @@
 @extends('layout.template')
 @section('content')
 
-
+<div class="row d-flex justify-content-center">
 <div class="card" style="width: 40rem;">
     <div class="card-body">
         <h5 class="card-title d-flex justify-content-center">{{$data['produto'] ? 'Editar Produto' : 'Novo Produto'}}
@@ -32,5 +32,5 @@
 
     </div>
 </div>
-
+</div>  
 @stop

@@ -14,7 +14,7 @@
 
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="{{url('/')}}">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="{{url('/produtos/create')}}">Produto</a>
@@ -26,10 +26,10 @@
             <a class="nav-link" href="{{url('/compras/create')}}">Compras</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="{{url('/inativo')}}">Inativos</a>
+            <a class="nav-link disabled" href="{{url('/inativos')}}">Inativos</a>
         </li>
     </ul>
-    <div class="container d-flex justify-content-center " style="padding: 60px">
+    <div class="container" style="padding: 60px">
         @yield('content')
     </div>
 </body>

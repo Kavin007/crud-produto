@@ -1,6 +1,5 @@
 @extends('layout.template')
 @section('content')
-
 <div class="container">
 <div class="card" style=" width: 50rem;">
     <div class="card-body">
@@ -41,8 +40,6 @@
     </div>
 </div>
 
-
-
 <div class="card" style=" width: 50rem;">
     <div class="card-body">
         <h5 class="card-title d-flex justify-content-center">Produtos</h5>
@@ -64,13 +61,15 @@
                     <td>{{$produto->nome}}</td>
                     <td>{{$produto->preco}}</td>
                     <td>{{$produto->descricao}}</td>
-                    
-                    <td><a  class="btn btn-warning">Editar</td>
-                    
-                    <td>
 
+                    <td><a href="{{url('produtos/'.$produto->id.'/edit')}}" class="btn btn-warning">Editar</td>
+                    <td>
+                        <form action="{{url('produtos', [$produto->id])}}" method="POST">
+                            {{method_field('DELETE')}}
+                            {{ csrf_field() }}
+                            
                             <button type="submit" class="btn btn-danger">Danger</button>
-                        
+                        </form>
                     </td>
                 </tr>
                 @endforeach
