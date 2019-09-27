@@ -1,7 +1,7 @@
 @extends('layout.template')
 @section('content')
 
-<div class="card" style="width: 35rem;">
+<div class="card " style="width: 35rem;">
     <div class="card-header d-flex justify-content-center">Nova Compra</div>
     <div class="card-body">
         <form method="POST" action="{{url('compras')}}">

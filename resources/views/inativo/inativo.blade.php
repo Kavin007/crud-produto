@@ -1,10 +1,10 @@
 @extends('layout.template')
 @section('content')
 
-<div class="container">
+<div class="container p-5">
 <div class="card" style=" width: 40rem;">
+<div class="card-header d-flex justify-content-center">Produtos Inativos</div>
     <div class="card-body">
-        <h5 class="card-title d-flex justify-content-center">Produtos Inativos</h5>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -20,11 +20,11 @@
                 <tr>
                     <th scope="row">{{$produto->id}}</th>
                     <td>{{$produto->nome}}</td>
-                    <td>{{$produto->validade}}</td>
+                    <td>{{$produto->preco}}</td>
                     <td>{{$produto->descricao}}</td>
                     
                     <td>
-                    <form action="{{url('produto', [$produto->id])}}" method="POST">
+                    <form action="{{url('produtos', [$produto->id])}}" method="POST">
                         {{method_field('DELETE')}}
                         {{ csrf_field() }}
                             <input type="submit" class="btn btn-success" value="Ativar"/>
@@ -38,10 +38,10 @@
 </div>
 </div>
 
-<div class="container">
+<div class="container mt-5">
 <div class="card" style="width: 40rem; ">
+<div class="card-header d-flex justify-content-center">Clientes Inativos</div>
     <div class="card-body">
-        <h5 class="card-title d-flex justify-content-center">Clientes Inativos</h5>
         <table class="table table-striped">
             <thead>
                 <tr>

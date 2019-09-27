@@ -3,9 +3,9 @@
 
 
 <div class="card" style="width: 40rem;">
-    <div class="card-body">
-        <h5 class="card-title d-flex justify-content-center">{{$data['cliente'] ? 'Editar cliente' : 'Novo cliente'}}</h5>
-        
+    
+<div class="card-header d-flex justify-content-center">{{$data['cliente'] ? 'Editar cliente' : 'Novo cliente'}}</div>
+        <div class="card-body">
         <form method="POST" action="{{url($data['url'])}}">
         @if($data['method'] == 'PUT')
                 @method('PUT')

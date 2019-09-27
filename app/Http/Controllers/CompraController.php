@@ -26,7 +26,7 @@ class CompraController extends Controller
             'clientes' => Clientes::all(),
             'produtos' => produtos::all()
         ];
-        return view('vendas', compact('data'));
+        return view('compras.vendas', compact('data'));
     }
 
 
@@ -49,10 +49,16 @@ class CompraController extends Controller
             
             
             DB::commit();
-            return redirect('compras');
+            return view('compras.home');
         } catch(\Exception $e) {
             DB::rollback();
-            return redirect('compras'); 
+            return view('compras.home'); 
         }
+     }
+
+
+     public function listar($id){
+         
+         return $id;
      }
 }

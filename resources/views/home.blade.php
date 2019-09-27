@@ -1,9 +1,9 @@
 @extends('layout.template')
 @section('content')
-<div class="container">
+
 <div class="card" style=" width: 50rem;">
+<div class="card-header d-flex justify-content-center">Clientes</div>
     <div class="card-body">
-        <h5 class="card-title d-flex justify-content-center">Clientes</h5>
         <table class="table table-striped">
             <thead>
 
@@ -15,6 +15,7 @@
                     <th scope="col">Ação</th>
                 </tr>
             </thead>
+
             @foreach($data['clientes'] as $cliente)
             <tbody>
                 <tr>
@@ -22,27 +23,29 @@
                     <td>{{$cliente->nome}}</td>
                     <td>{{$cliente->sobrenome}}</td>
                     <td>{{$cliente->email}}</td>
+                    <td><a href="{{url('clientes/'.$cliente->id.'/edit')}}" class="btn btn-warning ">Editar</a></td>
+                        <td>
                     
-                    <td><a href="{{url('clientes/'.$cliente->id.'/edit')}}" class="btn btn-warning">Editar</td>
-                    
-                    <td>
                         <form action="{{url('clientes', [$cliente->id])}}" method="POST">
                             {{method_field('DELETE')}}
                             {{ csrf_field() }}
                             
-                            <button type="submit" class="btn btn-danger">Danger</button>
+                            <button type="submit" class="btn btn-danger">Deletar</button>
                         </form>
                     </td>
+                    <td><a href="{{url('compras/home/'.$cliente->id)}}" class="btn btn-info">Listar Compras</a></td>
+                    
                 </tr>
                 @endforeach
+
             </tbody>
         </table>
     </div>
-</div>
 
-<div class="card" style=" width: 50rem;">
+
+<div class="card" style=" width: 50rem; mt-3">
+<div class="card-header d-flex justify-content-center">Produtos</div>
     <div class="card-body">
-        <h5 class="card-title d-flex justify-content-center">Produtos</h5>
         <table class="table table-striped">
             <thead>
 

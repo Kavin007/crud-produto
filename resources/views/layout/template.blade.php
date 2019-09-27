@@ -29,7 +29,7 @@
             <a class="nav-link disabled" href="{{url('/inativos')}}">Inativos</a>
         </li>
     </ul>
-    <div class="container" style="padding: 60px">
+    <div class="container d-flex justify-content-center" style="padding: 60px">
         @yield('content')
     </div>
 </body>

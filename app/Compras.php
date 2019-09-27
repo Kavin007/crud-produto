@@ -12,4 +12,8 @@ class Compras extends Model
     public function produtos() {
         return $this->belongsToMany('App\Produtos', 'produtos_has_compras','produtos_id','compras_id')->withPivot('quantidade');
     }
+
+    public function clientes(){
+        return $this->belongsTo('App\Clientes');
+    }
 }

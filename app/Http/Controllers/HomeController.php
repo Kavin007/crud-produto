@@ -9,19 +9,20 @@ class HomeController extends Controller
 {
     public function index()
     {   
-        $clientesInativos = Clientes::onlyTrashed()->get();
-        $produtosInativos =  Produtos::onlyTrashed()->get();
+      
+        
         $data = [
             'clientes' => Clientes::get(),
             'produtos' => Produtos::get(),
 
         ];
-        return view('home', compact('data','produtosInativos','produtosInativos'));
+        return view('home', compact('data'));
 
     }
 
     public function inativo(){
         $clientesInativos = Clientes::onlyTrashed()->get();
-        return view('inativo.inativo',compact('clientesInativos'));
+        $produtosInativos =  Produtos::onlyTrashed()->get();
+        return view('inativo.inativo',compact('clientesInativos','produtosInativos'));
     }
 }
