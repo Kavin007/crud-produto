@@ -58,7 +58,13 @@ class CompraController extends Controller
 
 
      public function listar($id){
-         
-         return $id;
+         $clientes = Clientes::findOrFail($id);
+         $compras = $clientes->compras()->get();
+        
+         return view('compras.listarCompras',compact('compras','clientes'));
+     }
+
+     public function show(){
+         return view('compras.show');
      }
 }

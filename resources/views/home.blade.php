@@ -1,7 +1,7 @@
 @extends('layout.template')
 @section('content')
 
-<div class="card" style=" width: 50rem;">
+<div class="card" style=" width: 50=5rem;">
 <div class="card-header d-flex justify-content-center">Clientes</div>
     <div class="card-body">
         <table class="table table-striped">

@@ -46,5 +46,6 @@ Route::prefix('compras')->group(function() {
     Route::get('create', 'CompraController@create');
     Route::get('/home/{id}','CompraController@listar');
     Route::post('/', 'CompraController@store');
+    Route::get('/detalhar','CompraController@show');
 });
 

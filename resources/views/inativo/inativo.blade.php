@@ -1,7 +1,7 @@
 @extends('layout.template')
 @section('content')
 
-<div class="container p-5">
+<div class="container mt-5">
 <div class="card" style=" width: 40rem;">
 <div class="card-header d-flex justify-content-center">Produtos Inativos</div>
     <div class="card-body">

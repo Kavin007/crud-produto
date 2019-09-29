@@ -1,4 +1,4 @@
 @extends('layout.template')
 @section('content')
-<h1>Lista de compras</h1>
+<h1>Em Breve...</h1>
 @stop

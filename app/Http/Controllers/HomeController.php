@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index()
-    {   
-      
-        
+    {          
         $data = [
             'clientes' => Clientes::get(),
             'produtos' => Produtos::get(),
@@ -25,4 +23,6 @@ class HomeController extends Controller
         $produtosInativos =  Produtos::onlyTrashed()->get();
         return view('inativo.inativo',compact('clientesInativos','produtosInativos'));
     }
+
+    
 }
